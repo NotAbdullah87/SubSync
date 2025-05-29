@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "SubSync",
+    "version": "1.0",
+    "description": "Add local subtitles to Bilibili videos",
+    "icons": {
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "*://*.bilibili.tv/*",
+      "*://*.bilibili.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.bilibili.tv/*", "*://*.bilibili.com/*"],
+        "js": ["content.js"],
+        "css": ["content.css"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "48": "icons/icon.png",
+        "128": "icons/icon.png"
+      }
+    },
+    "web_accessible_resources": [{
+      "resources": ["content.css"],
+      "matches": ["<all_urls>"]
+    }]
+  }
