@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SubSync - Local Subtitles</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">SubSync</div>
+    <div class="tagline">Perfect subtitle synchronization</div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <div class="current-file">
+        <h3>Current Subtitle File</h3>
+        <div id="currentFileName">None</div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="uploadBtn">Upload Subtitles</button>
+      <button id="removeBtn" style="display: none;">Remove Subtitles</button>
+    </div>
+
+    <div class="card">
+      <div class="search-section">
+        <h3>Find Subtitles</h3>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Enter movie/show name...">
+          <button id="searchBtn"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="settings">
+        <h3>Subtitle Settings</h3>
+
+        <div class="setting">
+          <label for="fontSize">Font Size</label>
+          <select id="fontSize">
+            <option value="18px">Small</option>
+            <option value="24px" selected>Medium</option>
+            <option value="30px">Large</option>
+            <option value="36px">Extra Large</option>
+          </select>
+        </div>
+
+        <div class="setting">
+          <label for="textColor">Text Color</label>
+          <input type="color" id="textColor" value="#ffffff">
+        </div>
+
+        <div class="setting">
+          <label for="bgColor">Background Color</label>
+          <input type="color" id="bgColor" value="#000000">
+        </div>
+
+        <div class="setting">
+          <label for="opacity">Opacity</label>
+          <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.7">
+        </div>
+
+        <button id="applySettings">Apply Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="credits">
+    <p>Made with ❤️ by <a href="https://github.com/NotAbdullah87" target="_blank">Abdullah Shakir</a></p>
+    <p>SubSync © 2025</p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
